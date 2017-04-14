@@ -1,0 +1,65 @@
+/* loading_with_scroll_selector ライブラリ */
+/* この数値を好きなように変える。 */
+$select_box_height: 30px;
+
+.loading_with_scroll_selector {
+  position: relative;
+
+  .selected_option_box {
+    box-sizing: border-box;
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
+    padding: 5px 10px;
+    height: $select_box_height;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .options_wrapper {
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    padding: 0;
+    width: 300px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+  }
+
+  .options {
+    height: $select_box_height * 5;
+    display: block;
+    background: #FFF;
+    margin: 0;
+    padding: 0;
+    width: calc(100% + 17px);
+    padding-right: 17px;
+    overflow-y: scroll;
+  }
+
+  .options li {
+    cursor: default;
+    box-sizing: border-box;
+    padding: 2px 10px;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    &:hover {
+      background-color: #66b6d5;
+      color: #fff;
+    }
+  }
+
+  .selected_option {
+    background-color: #ddd;
+  }
+
+  .options_scrollbar {
+    width: 6px;
+    position: absolute;
+    right: 1px;
+    background: #767676;
+    opacity: 0.8;
+    border-radius: 2px;
+  }
+}
